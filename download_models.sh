@@ -74,7 +74,7 @@ controlnet_model_names=(
     control_v1p_sd15_brightness.safetensors
 )
 for (( i=0; i<${#controlnet_model_urls[*]}; ++i)); do
-    download_model ${controlnet_model_urls[$i]} ${controlnet_model_names[$i]} extensions/sd-webui-controlnet/models
+    download_model ${controlnet_model_urls[$i]} ${controlnet_model_names[$i]} models/ControlNet
 done
 
 lora_model_urls =(
