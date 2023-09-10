@@ -134,3 +134,6 @@ embd_model_names=(
 for (( i=0; i<${#lora_model_urls[*]}; ++i)); do
     download_model ${embd_model_urls[$i]} ${embd_model_names[$i]} embeddings
 done
+
+sudo chmod -R 777 .
+bash webui.sh
