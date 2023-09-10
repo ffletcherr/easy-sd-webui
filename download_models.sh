@@ -79,7 +79,7 @@ done
 
 lora_model_urls =(
     https://civitai.com/api/download/models/135867
-    https://civitai.com/api/download/models/87153?type=Model&format=SafeTensor
+    https://civitai.com/api/download/models/87153
     https://civitai.com/api/download/models/62833
 )
 lora_model_names =(
@@ -88,5 +88,5 @@ lora_model_names =(
     'Detail Tweaker LoRA'
 )
 for (( i=0; i<${#lora_model_urls[*]}; ++i)); do
-    download_model ${lora_model_urls[$i]} ${lora_model_names[$i]} models/Lora/models
+    download_model ${lora_model_urls[$i]} ${lora_model_names[$i]} models/Lora
 done
