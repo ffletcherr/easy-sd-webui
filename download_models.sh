@@ -136,4 +136,11 @@ for (( i=0; i<${#lora_model_urls[*]}; ++i)); do
 done
 
 sudo chmod -R 777 .
+
+# if python3.10 is needed:
+# sudo add-apt-repository ppa:deadsnakes/ppa
+# sudo apt update
+# sudo apt install python3.10
+# sudo apt install python3.10-venv
+
 bash webui.sh
