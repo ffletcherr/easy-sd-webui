@@ -106,18 +106,18 @@ lora_model_urls=(
     https://civitai.com/api/download/models/143150
 )
 lora_model_names=(
-    'Detail_Tweaker_XL'
-    'Add_More_Details_Detail_Enhancer'
-    'Detail_Tweaker'
-    'Blacklight_Makeup_XL'
-    'Eyeliner_XL'
-    'Barbiecore'
-    'Curly_Hair_Slider'
-    'Cyberpunk_Anime_XL'
-    'Color_Temperature_Slider'
-    'Lineart_Flat_Colors'
-    'PE_Neon_Sign_XL'
-    'Age_Slider'
+    'Detail_Tweaker_XL.safetensors'
+    'Add_More_Details_Detail_Enhancer.safetensors'
+    'Detail_Tweaker.safetensors'
+    'Blacklight_Makeup_XL.safetensors'
+    'Eyeliner_XL.safetensors'
+    'Barbiecore.safetensors'
+    'Curly_Hair_Slider.safetensors'
+    'Cyberpunk_Anime_XL.safetensors'
+    'Color_Temperature_Slider.safetensors'
+    'Lineart_Flat_Colors.safetensors'
+    'PE_Neon_Sign_XL.safetensors'
+    'Age_Slider.safetensors'
 )
 for (( i=0; i<${#lora_model_urls[*]}; ++i)); do
     download_model ${lora_model_urls[$i]} ${lora_model_names[$i]} models/Lora
@@ -128,8 +128,8 @@ embd_model_urls=(
     https://civitai.com/api/download/models/149308
 )
 embd_model_names=(
-    'negative_hand'
-    'unaestheticXL_XL'
+    'negative_hand.safetensors'
+    'unaestheticXL_XL.safetensors'
 )
 for (( i=0; i<${#lora_model_urls[*]}; ++i)); do
     download_model ${embd_model_urls[$i]} ${embd_model_names[$i]} embeddings
