@@ -95,12 +95,42 @@ lora_model_urls=(
     https://civitai.com/api/download/models/135867
     https://civitai.com/api/download/models/87153
     https://civitai.com/api/download/models/62833
+    https://civitai.com/api/download/models/153389
+    https://civitai.com/api/download/models/140229
+    https://civitai.com/api/download/models/142160
+    https://civitai.com/api/download/models/147196
+    https://civitai.com/api/download/models/141094
+    https://civitai.com/api/download/models/139548
+    https://civitai.com/api/download/models/147989
+    https://civitai.com/api/download/models/151344
+    https://civitai.com/api/download/models/143150
 )
 lora_model_names=(
-    'Detail Tweaker XL'
-    'Add More Details - Detail Enhancer'
-    'Detail Tweaker LoRA'
+    'Detail_Tweaker_XL'
+    'Add_More_Details_Detail_Enhancer'
+    'Detail_Tweaker'
+    'Blacklight_Makeup_XL'
+    'Eyeliner_XL'
+    'Barbiecore'
+    'Curly_Hair_Slider'
+    'Cyberpunk_Anime_XL'
+    'Color_Temperature_Slider'
+    'Lineart_Flat_Colors'
+    'PE_Neon_Sign_XL'
+    'Age_Slider'
 )
 for (( i=0; i<${#lora_model_urls[*]}; ++i)); do
     download_model ${lora_model_urls[$i]} ${lora_model_names[$i]} models/Lora
+done
+
+embd_model_urls=(
+    https://civitai.com/api/download/models/60938
+    https://civitai.com/api/download/models/149308
+)
+embd_model_names=(
+    'negative_hand'
+    'unaestheticXL_XL'
+)
+for (( i=0; i<${#lora_model_urls[*]}; ++i)); do
+    download_model ${embd_model_urls[$i]} ${embd_model_names[$i]} embeddings
 done
