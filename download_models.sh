@@ -91,12 +91,12 @@ for (( i=0; i<${#controlnet_model_urls[*]}; ++i)); do
     download_model ${controlnet_model_urls[$i]} ${controlnet_model_names[$i]} models/ControlNet
 done
 
-lora_model_urls =(
+lora_model_urls=(
     https://civitai.com/api/download/models/135867
     https://civitai.com/api/download/models/87153
     https://civitai.com/api/download/models/62833
 )
-lora_model_names =(
+lora_model_names=(
     'Detail Tweaker XL'
     'Add More Details - Detail Enhancer'
     'Detail Tweaker LoRA'
