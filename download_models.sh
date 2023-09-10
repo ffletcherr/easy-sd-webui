@@ -63,6 +63,13 @@ controlnet_model_urls=(
     https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_softedge.pth
     https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth
     https://huggingface.co/ViscoseBean/control_v1p_sd15_brightness/resolve/main/control_v1p_sd15_brightness.safetensors
+    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_canny_mid.safetensors
+    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_depth_mid.safetensors
+    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/ip-adapter_sd15.pth
+    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/ip-adapter_sd15_plus.pth
+    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/ip-adapter_xl.pth
+    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_xl_openpose.safetensors
+    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_xl_sketch.safetensors
 )
 controlnet_model_names=(
     control_v11p_sd15_openpose.pth
@@ -72,6 +79,13 @@ controlnet_model_names=(
     control_v11p_sd15_softedge.pth
     control_v11f1e_sd15_tile.pth
     control_v1p_sd15_brightness.safetensors
+    diffusers_xl_canny_mid.safetensors
+    diffusers_xl_depth_mid.safetensors
+    ip-adapter_sd15.pth
+    ip-adapter_sd15_plus.pth
+    ip-adapter_xl.pth
+    t2i-adapter_xl_openpose.safetensors
+    t2i-adapter_xl_sketch.safetensors
 )
 for (( i=0; i<${#controlnet_model_urls[*]}; ++i)); do
     download_model ${controlnet_model_urls[$i]} ${controlnet_model_names[$i]} models/ControlNet
