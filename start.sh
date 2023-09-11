@@ -1,1 +1,0 @@
-sudo ./venv/bin/python webui.py --api --listen --enable-insecure-extension-access --port 7869
