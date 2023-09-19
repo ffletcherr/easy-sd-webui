@@ -128,7 +128,7 @@ embd_model_urls=(
     https://civitai.com/api/download/models/149308
 )
 embd_model_names=(
-    'negative_hand.safetensors'
+    'negative_hand.pt'
     'unaestheticXL_XL.safetensors'
 )
 for (( i=0; i<${#lora_model_urls[*]}; ++i)); do
@@ -138,10 +138,10 @@ done
 sudo chmod -R 777 .
 
 # if python3.10 is needed:
-sudo add-apt-repository ppa:deadsnakes/ppa
+sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update
-sudo apt install python3.10
-sudo apt install python3.10-venv
+sudo apt install python3.10 -y
+sudo apt install python3.10-venv -y
 
 printf '#!/bin/bash\n\nexport COMMANDLINE_ARGS="--api --listen --no-half-vae --enable-insecure-extension-access --port 7869"\n\npython_cmd="python3.10"' > webui-user.sh
 
