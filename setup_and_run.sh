@@ -1,3 +1,14 @@
+# cd to the parent directory of this file before running it
+absolute_path=$(realpath $0)
+absolute_dir=$(dirname $absolute_path)
+parent_dir=$(dirname $absolute_dir)
+cd $parent_dir
+# check if stable-diffusion-webui folder exists
+if [ -d "stable-diffusion-webui" ]; then
+    echo "stable-diffusion-webui folder already exists"
+    echo "please remove it before running this script"
+    exit 1
+fi
 # check aria2c is installed
 if ! command -v aria2c &> /dev/null
 then
