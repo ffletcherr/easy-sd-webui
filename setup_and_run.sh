@@ -26,18 +26,20 @@ function download_model {
 
 # loop over models to download
 sd_model_urls=(
-    https://huggingface.co/emmajoanne/models/resolve/main/revAnimated_v122.safetensors
+    https://civitai.com/api/download/models/127207
     https://civitai.com/api/download/models/156110
     https://civitai.com/api/download/models/156005
     https://civitai.com/api/download/models/126688
     https://civitai.com/api/download/models/128592
+    https://civitai.com/api/download/models/143906
 )
 sd_model_names=(
-    revAnimated_v122.safetensors
+    juggernaut_aftermath.safetensors
     Deliberate_v3.safetensors
     juggernautXL_version3.safetensors
     dreamshaperXL10_alpha2Xl10.safetensors
     animeArtDiffusionXL_alpha3.safetensors
+    epicrealism_naturalSinRC1VAE.safetensors
 )
 for (( i=0; i<${#sd_model_urls[*]}; ++i)); do
     download_model ${sd_model_urls[$i]} ${sd_model_names[$i]} models/Stable-diffusion
@@ -48,6 +50,8 @@ done
 extensions_repos=(
     https://github.com/Mikubill/sd-webui-controlnet.git
     https://github.com/Vetchems/sd-civitai-browser.git
+    https://github.com/deforum-art/sd-webui-deforum.git
+    https://github.com/continue-revolution/sd-webui-animatediff.git
 )
 for repo_url in "${extensions_repos[@]}"
 do
@@ -61,6 +65,7 @@ controlnet_model_urls=(
     https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny.pth
     https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_lineart.pth
     https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_softedge.pth
+    https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth
     https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth
     https://huggingface.co/ViscoseBean/control_v1p_sd15_brightness/resolve/main/control_v1p_sd15_brightness.safetensors
     https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_canny_mid.safetensors
@@ -77,6 +82,7 @@ controlnet_model_names=(
     control_v11p_sd15_canny.pth
     control_v11p_sd15_lineart.pth
     control_v11p_sd15_softedge.pth
+    control_v11f1p_sd15_depth.pth
     control_v11f1e_sd15_tile.pth
     control_v1p_sd15_brightness.safetensors
     diffusers_xl_canny_mid.safetensors
