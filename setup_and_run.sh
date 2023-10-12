@@ -7,6 +7,7 @@ cd $parent_dir
 if [ -d "stable-diffusion-webui" ]; then
     echo "[INFO] stable-diffusion-webui folder already exists"
     echo "[INFO] just running webui.sh"
+    cd stable-diffusion-webui
     bash webui.sh
     exit 0
 fi
