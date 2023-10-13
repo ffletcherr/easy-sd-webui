@@ -41,7 +41,7 @@ function download_model {
 sd_model_urls=(
     https://civitai.com/api/download/models/127207
     https://civitai.com/api/download/models/156110
-    https://civitai.com/api/download/models/156005
+    https://civitai.com/api/download/models/166909
     https://civitai.com/api/download/models/126688
     https://civitai.com/api/download/models/128592
     https://civitai.com/api/download/models/143906
@@ -49,7 +49,7 @@ sd_model_urls=(
 sd_model_names=(
     juggernaut_aftermath.safetensors
     Deliberate_v3.safetensors
-    juggernautXL_version3.safetensors
+    juggernautXL_version5.safetensors
     dreamshaperXL10_alpha2Xl10.safetensors
     animeArtDiffusionXL_alpha3.safetensors
     epicrealism_naturalSinRC1VAE.safetensors
