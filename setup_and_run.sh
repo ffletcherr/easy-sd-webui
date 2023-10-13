@@ -36,16 +36,7 @@ function download_model {
     dest_folder=$3
     aria2c --check-certificate=false --console-log-level=error -c -x 16 -s 16 -k 1M $model_url -d $dest_folder -o $model_name
 }
-# download motion models
-motion_model_urls=(
-    https://huggingface.co/guoyww/animatediff/resolve/refs%2Fpr%2F3/mm_sd_v15_v2.safetensors
-)
-motion_model_names=(
-    mm_sd_v15_v2.safetensors
-)
-for (( i=0; i<${#motion_model_urls[*]}; ++i)); do
-    download_model ${motion_model_urls[$i]} ${motion_model_names[$i]} extensions/sd-webui-animatediff/model
-done
+
 # loop over models to download
 sd_model_urls=(
     https://civitai.com/api/download/models/127207
@@ -80,6 +71,17 @@ do
     clone_repo $repo_url
 done
 
+# download motion models
+motion_model_urls=(
+    https://huggingface.co/guoyww/animatediff/resolve/refs%2Fpr%2F3/mm_sd_v15_v2.safetensors
+)
+motion_model_names=(
+    mm_sd_v15_v2.safetensors
+)
+for (( i=0; i<${#motion_model_urls[*]}; ++i)); do
+    download_model ${motion_model_urls[$i]} ${motion_model_names[$i]} extensions/sd-webui-animatediff/model
+
+done
 # loop over models to download
 controlnet_model_urls=(
     https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.pth
