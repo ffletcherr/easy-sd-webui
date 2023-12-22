@@ -45,6 +45,8 @@ sd_model_urls=(
     https://civitai.com/api/download/models/126688
     https://civitai.com/api/download/models/128592
     https://civitai.com/api/download/models/143906
+    https://civitai.com/api/download/models/46846
+    https://civitai.com/api/download/models/128713
 )
 sd_model_names=(
     juggernaut_aftermath.safetensors
@@ -53,6 +55,8 @@ sd_model_names=(
     dreamshaperXL10_alpha2Xl10.safetensors
     animeArtDiffusionXL_alpha3.safetensors
     epicrealism_naturalSinRC1VAE.safetensors
+    revAnimated_v122EOL.safetensors
+    dreamshaper_8.safetensors
 )
 for (( i=0; i<${#sd_model_urls[*]}; ++i)); do
     download_model ${sd_model_urls[$i]} ${sd_model_names[$i]} models/Stable-diffusion
@@ -99,6 +103,8 @@ controlnet_model_urls=(
     https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/ip-adapter_xl.pth
     https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_xl_openpose.safetensors
     https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_xl_sketch.safetensors
+    https://huggingface.co/monster-labs/control_v1p_sd15_qrcode_monster/resolve/main/control_v1p_sd15_qrcode_monster.safetensors
+    https://huggingface.co/monster-labs/control_v1p_sd15_qrcode_monster/resolve/main/v2/control_v1p_sd15_qrcode_monster_v2.safetensors
 )
 controlnet_model_names=(
     control_v11p_sd15_openpose.pth
@@ -116,6 +122,8 @@ controlnet_model_names=(
     ip-adapter_xl.pth
     t2i-adapter_xl_openpose.safetensors
     t2i-adapter_xl_sketch.safetensors
+    control_v1p_sd15_qrcode_monster.safetensors
+    control_v1p_sd15_qrcode_monster_v2.safetensors
 )
 for (( i=0; i<${#controlnet_model_urls[*]}; ++i)); do
     download_model ${controlnet_model_urls[$i]} ${controlnet_model_names[$i]} models/ControlNet
