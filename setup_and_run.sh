@@ -40,20 +40,12 @@ function download_model {
 # loop over models to download
 sd_model_urls=(
     https://civitai.com/api/download/models/127207
-    https://civitai.com/api/download/models/156110
-    https://civitai.com/api/download/models/166909
-    https://civitai.com/api/download/models/126688
-    https://civitai.com/api/download/models/128592
     https://civitai.com/api/download/models/143906
     https://civitai.com/api/download/models/46846
     https://civitai.com/api/download/models/128713
 )
 sd_model_names=(
     juggernaut_aftermath.safetensors
-    Deliberate_v3.safetensors
-    juggernautXL_version5.safetensors
-    dreamshaperXL10_alpha2Xl10.safetensors
-    animeArtDiffusionXL_alpha3.safetensors
     epicrealism_naturalSinRC1VAE.safetensors
     revAnimated_v122EOL.safetensors
     dreamshaper_8.safetensors
@@ -96,13 +88,8 @@ controlnet_model_urls=(
     https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth
     https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth
     https://huggingface.co/ViscoseBean/control_v1p_sd15_brightness/resolve/main/control_v1p_sd15_brightness.safetensors
-    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_canny_mid.safetensors
-    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_depth_mid.safetensors
     https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/ip-adapter_sd15.pth
     https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/ip-adapter_sd15_plus.pth
-    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/ip-adapter_xl.pth
-    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_xl_openpose.safetensors
-    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_xl_sketch.safetensors
     https://huggingface.co/monster-labs/control_v1p_sd15_qrcode_monster/resolve/main/control_v1p_sd15_qrcode_monster.safetensors
     https://huggingface.co/monster-labs/control_v1p_sd15_qrcode_monster/resolve/main/v2/control_v1p_sd15_qrcode_monster_v2.safetensors
 )
@@ -115,13 +102,8 @@ controlnet_model_names=(
     control_v11f1p_sd15_depth.pth
     control_v11f1e_sd15_tile.pth
     control_v1p_sd15_brightness.safetensors
-    diffusers_xl_canny_mid.safetensors
-    diffusers_xl_depth_mid.safetensors
     ip-adapter_sd15.pth
     ip-adapter_sd15_plus.pth
-    ip-adapter_xl.pth
-    t2i-adapter_xl_openpose.safetensors
-    t2i-adapter_xl_sketch.safetensors
     control_v1p_sd15_qrcode_monster.safetensors
     control_v1p_sd15_qrcode_monster_v2.safetensors
 )
@@ -130,31 +112,21 @@ for (( i=0; i<${#controlnet_model_urls[*]}; ++i)); do
 done
 
 lora_model_urls=(
-    https://civitai.com/api/download/models/135867
     https://civitai.com/api/download/models/87153
     https://civitai.com/api/download/models/62833
-    https://civitai.com/api/download/models/153389
-    https://civitai.com/api/download/models/140229
     https://civitai.com/api/download/models/142160
     https://civitai.com/api/download/models/147196
-    https://civitai.com/api/download/models/141094
     https://civitai.com/api/download/models/139548
     https://civitai.com/api/download/models/147989
-    https://civitai.com/api/download/models/151344
     https://civitai.com/api/download/models/143150
 )
 lora_model_names=(
-    'Detail_Tweaker_XL.safetensors'
     'Add_More_Details_Detail_Enhancer.safetensors'
     'Detail_Tweaker.safetensors'
-    'Blacklight_Makeup_XL.safetensors'
-    'Eyeliner_XL.safetensors'
     'Barbiecore.safetensors'
     'Curly_Hair_Slider.safetensors'
-    'Cyberpunk_Anime_XL.safetensors'
     'Color_Temperature_Slider.safetensors'
     'Lineart_Flat_Colors.safetensors'
-    'PE_Neon_Sign_XL.safetensors'
     'Age_Slider.safetensors'
 )
 for (( i=0; i<${#lora_model_urls[*]}; ++i)); do
@@ -163,11 +135,9 @@ done
 
 embd_model_urls=(
     https://civitai.com/api/download/models/60938
-    https://civitai.com/api/download/models/149308
 )
 embd_model_names=(
     'negative_hand.pt'
-    'unaestheticXL_XL.safetensors'
 )
 for (( i=0; i<${#lora_model_urls[*]}; ++i)); do
     download_model ${embd_model_urls[$i]} ${embd_model_names[$i]} embeddings
