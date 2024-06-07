@@ -40,15 +40,13 @@ function download_model {
 # loop over models to download
 sd_model_urls=(
     https://civitai.com/api/download/models/274039
-    https://civitai.com/api/download/models/348913
-    https://civitai.com/api/download/models/126688
-    https://civitai.com/api/download/models/128592
+    https://civitai.com/api/download/models/471120
+    https://civitai.com/api/download/models/501240
 )
 sd_model_names=(
     juggernaut_reborn.safetensors
-    juggernautXL_v9Rundiffusionphoto2.safetensors
-    dreamshaperXL10_alpha2Xl10.safetensors
-    animeArtDiffusionXL_alpha3.safetensors
+    Juggernaut_X_RunDiffusion_Hyper.safetensors
+    realisticVisionV60B1_v51HyperVAE.safetensors
 )
 for (( i=0; i<${#sd_model_urls[*]}; ++i)); do
     download_model ${sd_model_urls[$i]} ${sd_model_names[$i]} models/Stable-diffusion
@@ -59,8 +57,7 @@ done
 extensions_repos=(
     https://github.com/Mikubill/sd-webui-controlnet.git
     https://github.com/Vetchems/sd-civitai-browser.git
-    https://github.com/deforum-art/sd-webui-deforum.git
-    https://github.com/continue-revolution/sd-webui-animatediff.git
+    https://github.com/Bing-su/adetailer.git
 )
 for repo_url in "${extensions_repos[@]}"
 do
@@ -87,17 +84,10 @@ controlnet_model_urls=(
     https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_softedge.pth
     https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth
     https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth
-    https://huggingface.co/ViscoseBean/control_v1p_sd15_brightness/resolve/main/control_v1p_sd15_brightness.safetensors
-    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_canny_mid.safetensors
-    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_depth_mid.safetensors
-    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/ip-adapter_sd15.pth
-    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/ip-adapter_sd15_plus.pth
-    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/ip-adapter_xl.pth
-    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_xl_openpose.safetensors
-    https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_xl_sketch.safetensors
-    https://huggingface.co/monster-labs/control_v1p_sd15_qrcode_monster/resolve/main/control_v1p_sd15_qrcode_monster.safetensors
-    https://huggingface.co/monster-labs/control_v1p_sd15_qrcode_monster/resolve/main/v2/control_v1p_sd15_qrcode_monster_v2.safetensors
-    https://huggingface.co/destitech/controlnet-inpaint-dreamer-sdxl/resolve/main/models/cn-inpainting-dreamer-0.1-alpha.safetensors
+    https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sd15.bin
+    https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sd15_lora.safetensors
+    https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl.bin
+    https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl_lora.safetensors
 )
 controlnet_model_names=(
     control_v11p_sd15_openpose.pth
@@ -107,17 +97,10 @@ controlnet_model_names=(
     control_v11p_sd15_softedge.pth
     control_v11f1p_sd15_depth.pth
     control_v11f1e_sd15_tile.pth
-    control_v1p_sd15_brightness.safetensors
-    diffusers_xl_canny_mid.safetensors
-    diffusers_xl_depth_mid.safetensors
-    ip-adapter_sd15.pth
-    ip-adapter_sd15_plus.pth
-    ip-adapter_xl.pth
-    t2i-adapter_xl_openpose.safetensors
-    t2i-adapter_xl_sketch.safetensors
-    control_v1p_sd15_qrcode_monster.safetensors
-    control_v1p_sd15_qrcode_monster_v2.safetensors
-    cn-inpainting-dreamer-0.1-alpha.safetensors
+    ip-adapter-faceid-plusv2_sd15.bin
+    ip-adapter-faceid-plusv2_sd15_lora.safetensors
+    ip-adapter-faceid-plusv2_sdxl.bin
+    ip-adapter-faceid-plusv2_sdxl_lora.safetensors
 )
 for (( i=0; i<${#controlnet_model_urls[*]}; ++i)); do
     download_model ${controlnet_model_urls[$i]} ${controlnet_model_names[$i]} models/ControlNet
@@ -127,21 +110,11 @@ lora_model_urls=(
     https://civitai.com/api/download/models/135867
     https://civitai.com/api/download/models/87153
     https://civitai.com/api/download/models/62833
-    https://civitai.com/api/download/models/153389
-    https://civitai.com/api/download/models/140229
-    https://civitai.com/api/download/models/141094
-    https://civitai.com/api/download/models/139548
-    https://civitai.com/api/download/models/147989
 )
 lora_model_names=(
     'Detail_Tweaker_XL.safetensors'
     'Add_More_Details_Detail_Enhancer.safetensors'
     'Detail_Tweaker.safetensors'
-    'Blacklight_Makeup_XL.safetensors'
-    'Eyeliner_XL.safetensors'
-    'Cyberpunk_Anime_XL.safetensors'
-    'Color_Temperature_Slider.safetensors'
-    'Lineart_Flat_Colors.safetensors'
 )
 for (( i=0; i<${#lora_model_urls[*]}; ++i)); do
     download_model ${lora_model_urls[$i]} ${lora_model_names[$i]} models/Lora
